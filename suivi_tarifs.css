@@ -1,0 +1,246 @@
+/* --- START OF FILE suivi_tarifs.css --- */
+
+/* Import ou base si non géré globalement par style.css */
+/* Si style.css est lié AVANT suivi_tarifs.css dans l'HTML, suivi_tarifs.css peut le surcharger */
+/* Si style.css n'est PAS lié dans suivi_tarifs.html, vous devrez copier les styles globaux nécessaires ici */
+
+body {
+    /* Styles de base si non gérés par un fichier global comme style.css */
+    /* background-color: #1a202c; */
+    /* color: #f7fafc; */
+    /* font-family: 'Arial', sans-serif; */
+    /* margin: 0; */
+    /* padding: 0; */
+}
+
+/* Surcharges ou styles spécifiques */
+
+.glass-card {
+    /* Assurez-vous que ces styles sont corrects ou hérités de style.css */
+    background-color: rgba(45, 55, 72, 0.4);
+    border: 1px solid rgba(74, 85, 104, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 0.75rem;
+}
+
+.highlight-orange {
+     /* Assurez-vous que ces styles sont corrects ou hérités de style.css */
+}
+
+.label-style {
+    /* Assurez-vous que ces styles sont corrects ou hérités de style.css */
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: #e2e8f0; /* text-slate-200 */
+}
+
+.input-style {
+    /* Assurez-vous que ces styles sont corrects ou hérités de style.css */
+    width: 100%;
+    background-color: #374151; /* bg-slate-700 */
+    border: 1px solid #4b5563; /* border-slate-600 */
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    color: #e5e7eb; /* text-gray-200 */
+    outline: none;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.input-style:focus {
+    border-color: #F97316; /* vibrant-orange */
+    box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.5);
+}
+
+/* Styles spécifiques pour Chart.js */
+/* Le conteneur doit avoir une taille explicite */
+.chart-container {
+    position: relative;
+    height: 400px; /* Hauteur fixe pour le graphique */
+    width: 100%;
+    /* Ajouter potentiellement un fond si le graphique est transparent */
+    background-color: rgba(45, 55, 72, 0.5); /* darker-charcoal semi-transparent */
+    border-radius: 0.5rem; /* rounded-lg */
+    padding: 1rem; /* Espace intérieur */
+}
+
+/* S'assurer que le canvas prend toute la place disponible dans le conteneur */
+.chart-container canvas {
+    display: block; /* Important pour éviter les marges sous le canvas */
+    width: 100% !important; /* Surcharge potentielle par Chart.js */
+    height: 100% !important; /* Surcharge potentielle par Chart.js */
+}
+
+
+/* Styles pour le tableau comparatif */
+#suivi-comparisonTable {
+    /* Container pour le tableau et sa légende */
+}
+
+#suivi-comparisonTable table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Assurez-vous que les styles de base du tableau sont définis ici ou dans style.css */
+    /* Si style.css est chargé, ces sélecteurs plus spécifiques les surchargeront */
+    /* Exemple (si style.css n'est PAS utilisé): */
+    /* background-color: rgba(45, 55, 72, 0.4); */
+    /* color: #e2e8f0; */
+    /* border-radius: 0.5rem; */
+    /* overflow: hidden; /* Pour rounded corners et overflow auto */
+}
+
+#suivi-comparisonTable th,
+#suivi-comparisonTable td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #4a5568; /* medium-charcoal border */
+    font-size: 0.875rem; /* text-sm */
+}
+#suivi-comparisonTable th {
+    background-color: #2d3748; /* darker-charcoal */
+    color: #f97316; /* vibrant-orange */
+    font-weight: 600;
+    text-transform: uppercase;
+}
+#suivi-comparisonTable td {
+     color: #cbd5e0; /* slate-300 */
+}
+
+
+#suivi-comparisonTable tbody tr:last-child td {
+    border-bottom: none;
+}
+
+#suivi-comparisonTable tbody tr:hover {
+    background-color: rgba(74, 85, 104, 0.2);
+}
+
+/* Couleurs spécifiques pour les cellules du tableau (doivent correspondre aux classes Tailwind) */
+#suivi-comparisonTable .text-accent-green { color: #22C55E; } /* Tailwind green-500 */
+#suivi-comparisonTable .text-accent-red { color: #EF4444; } /* Tailwind red-500 */
+#suivi-comparisonTable .text-gray-500 { color: #a0aec0; } /* Tailwind gray-500 */
+#suivi-comparisonTable .text-gray-300 { color: #d1d5db; } /* Tailwind gray-300 */
+#suivi-comparisonTable .font-semibold { font-weight: 600; }
+#suivi-comparisonTable .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+#suivi-comparisonTable .text-right { text-align: right; }
+#suivi-comparisonTable .italic { font-style: italic; }
+
+
+/* Styles pour l'analyse des différences */
+#suivi-differenceAnalysis > div {
+    background-color: rgba(45, 55, 72, 0.3);
+    border: 1px solid rgba(74, 85, 104, 0.4);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem; /* Pour simuler space-y-6 entre les blocs */
+    color: #e2e8f0;
+}
+#suivi-differenceAnalysis > div:last-child {
+    margin-bottom: 0; /* Pas de marge après le dernier bloc */
+}
+
+#suivi-differenceAnalysis h5 {
+     font-size: 1rem;
+     font-weight: 500;
+     margin-bottom: 0.5rem;
+     color: #fb923c;
+}
+
+#suivi-differenceAnalysis ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+#suivi-differenceAnalysis li {
+    margin-bottom: 0.25rem;
+}
+
+
+/* Styles pour les boutons d'action (assurez-vous qu'ils sont cohérents ou hérités) */
+/* Ces classes sont définies dans style.css, donc pas besoin de les répéter ici sauf surcharge */
+
+
+/* Styles pour les blocs partenaire/plan dynamiques */
+.partner-comparison-block {
+    background-color: #2d3748;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid #4a5568;
+    margin-bottom: 1rem; /* Pour simuler space-y-4 dans le conteneur */
+}
+#partnerComparisonsContainer .partner-comparison-block:last-child {
+     margin-bottom: 0; /* Pas de marge sous le dernier bloc */
+}
+
+
+.partner-comparison-block h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #cbd5e0;
+}
+
+.partner-comparison-block .remove-btn {
+     color: #f87171;
+     background: none;
+     border: none;
+     cursor: pointer;
+     padding: 0.25rem;
+     margin: -0.25rem;
+     font-size: 1rem;
+     transition: color 0.2s ease-in-out;
+}
+.partner-comparison-block .remove-btn:hover {
+     color: #ef4444;
+}
+
+.form-text-style {
+     font-size: 0.75rem;
+     color: #94a3b8;
+     margin-top: 0.25rem;
+     min-height: 1.1em; /* Important pour éviter les sauts de mise en page */
+}
+
+/* Styles d'alerte (assurez-vous qu'ils sont cohérents ou hérités) */
+/* Ces classes sont définies dans style.css, donc pas besoin de les répéter ici sauf surcharge */
+/* S'assurer que le conteneur d'alerte existe dans l'HTML et qu'il n'est pas masqué par un style parent */
+#suivi-global-message-area { /* Assurez-vous que ce conteneur n'est pas display: none */ }
+#suivi-alertContainer { /* Assurez-vous que ce conteneur n'est pas display: none */
+    /* Ajoutez des styles si nécessaire pour positionnement/espacement */
+}
+
+/* Couleurs pour les datasets Chart.js (utilisées directement en JS maintenant) */
+/* Les classes chartjs-colors-X ne sont plus nécessaires si les couleurs sont passées via l'objet dataset en JS */
+/* Laissez-les si elles sont encore utilisées quelque part, sinon supprimez */
+
+
+/* Styles pour les légendes du tableau */
+#suivi-comparisonTable .mt-4 { margin-top: 1rem; } /* Simulate Tailwind mt-4 */
+#suivi-comparisonTable .text-sm { font-size: 0.875rem; } /* Simulate Tailwind text-sm */
+#suivi-comparisonTable .text-gray-400 { color: #9ca3af; } /* Simulate Tailwind text-gray-400 */
+#suivi-comparisonTable .mr-1 { margin-right: 0.25rem; } /* Simulate Tailwind mr-1 */
+#suivi-comparisonTable span.text-accent-green { color: #22C55E; } /* Green color for text in legend */
+#suivi-comparisonTable span.text-accent-red { color: #EF4444; } /* Red color for text in legend */
+
+
+/* S'assurer que les éléments cachés par défaut le sont bien */
+.hidden {
+    display: none !important; /* Utilisation de !important pour s'assurer que Tailwind ou un autre style ne surchage pas */
+}
+
+/* Style pour l'indicateur de chargement */
+.loading-indicator {
+     /* Assurez-vous que ces styles sont corrects ou hérités de style.css */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 1rem;
+     color: #a0aec0;
+     font-style: italic;
+}
+.loading-indicator i {
+     margin-left: 0.5rem;
+}
